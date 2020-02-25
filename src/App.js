@@ -20,7 +20,7 @@ function App() {
         </a>
         <p>
           <Survey />
-        </p>
+        </p>  
       </header>
     </div>
   );
