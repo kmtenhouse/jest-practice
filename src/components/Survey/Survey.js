@@ -1,11 +1,16 @@
 import React from "react";
 import "./survey.css";
 
+/* Redux stuff */
+import { connect } from "react-redux";
+import { chooseName, chooseColor, chooseQuest } from "../../redux/actions/surveyActions"
+
+
 function Survey(props) {
-    return(
+    return (
         <form className="survey">
             <label htmlFor="name">What is your name?</label>
-            <select name="name">
+            <select name="name" onChange={pickName}>
                 <option value="" selected disabled>Please choose:</option>
                 <option value="kingarthur">King Arthur</option>
                 <option value="tim">There are some who call me...Tim?</option>
@@ -28,4 +33,19 @@ function Survey(props) {
     );
 }
 
-export default Survey;
+const mapStateToProps = state => {
+    return {
+        name: state.survey.name,
+        quest: state.survey.quest,
+        color: state.survey.color
+    };
+};
+
+const mapDispatchToProps = {
+    chooseName,
+    chooseColor,
+    chooseQuest
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Survey);
+
