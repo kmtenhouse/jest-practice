@@ -5,9 +5,9 @@ describe("Survey reducer", () => {
 
     beforeAll(() => {
         defaultState = {
-            name: null,
-            quest: null,
-            color: null
+            name: "",
+            quest: "",
+            color: ""
         };
     });
 
@@ -18,8 +18,8 @@ describe("Survey reducer", () => {
     it("should update name", ()=> {
         const desiredOutcome =  {
             name: "King Arthur",
-            quest: null,
-            color: null
+            quest: "",
+            color: ""
         };
 
         expect(surveyReducer(defaultState, { type: "SURVEY_CHOOSE_NAME", payload: "King Arthur"})).toEqual(desiredOutcome);
@@ -27,9 +27,9 @@ describe("Survey reducer", () => {
 
     it("should update quest", ()=> {
         const desiredOutcome =  {
-            name:  null,
+            name:  "",
             quest: "To seek the grail",
-            color: null
+            color: ""
         };
 
         expect(surveyReducer(defaultState, { type: "SURVEY_CHOOSE_QUEST", payload: "To seek the grail"})).toEqual(desiredOutcome);
@@ -37,8 +37,8 @@ describe("Survey reducer", () => {
 
     it("should update color", ()=> {
         const desiredOutcome =  {
-            name: null,
-            quest: null,
+            name: "",
+            quest: "",
             color: "Purple"
         };
 

@@ -1,9 +1,9 @@
 import * as Actions from "../constants/surveyConstants";
 
 const defaultState = {
-    name: null,
-    quest: null,
-    color: null
+    name: "",
+    quest: "",
+    color: ""
 };
 
 export default function surveyReducer(state = defaultState, action) {
