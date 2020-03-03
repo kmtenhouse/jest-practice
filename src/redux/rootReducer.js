@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import surveyReducer from "./survey/reducers/surveyReducers";
+import listReducer from "./list/reducers";
 
-const appReducer = combineReducers({ survey: surveyReducer });
+const appReducer = combineReducers({ list: listReducer });
 
 export default appReducer;
